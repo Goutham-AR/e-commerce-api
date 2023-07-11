@@ -1,0 +1,127 @@
+@URL = http://localhost:3000/api/v1
+
+
+GET http://localhost:3000 HTTP/1.1
+
+
+###
+POST {{URL}}/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "user2",
+    "email": "user2@gmail.com",
+    "password": "password",
+    "role": "user"
+}
+
+###
+POST {{URL}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "adminp"
+}
+
+###
+POST {{URL}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "user@gmail.com",
+    "password": "password"
+}
+
+
+###
+POST {{URL}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "hello1@gmail.com",
+    "password": "hellothere"
+}
+
+
+###
+GET {{URL}}/auth/logout HTTP/1.1
+
+
+
+
+###
+GET {{URL}}/users HTTP/1.1
+
+
+
+###
+GET {{URL}}/users/showMe HTTP/1.1
+
+
+###
+PATCH {{URL}}/users/updateUser HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Goutham AR"
+}
+
+
+###
+PATCH  {{URL}}/users/updateUserPassword HTTP/1.1
+Content-Type: application/json
+
+{
+    "oldPassword": "hellothere",
+    "newPassword": "hithere"
+}
+
+
+
+###
+GET {{URL}}/users/64a275b4a38828173f06e68c HTTP/1.1
+
+
+
+
+###
+GET {{URL}}/products HTTP/1.1
+
+###
+POST {{URL}}/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Adidas Forum 86",
+    "price": 11000,
+    "description": "Sneaker",
+    "category": "fashion",
+    "company": "adidas",
+    "colors": ["white", "black"],
+    "featured": true,
+    "freeShipping": false,
+    "inventory": 12
+}
+
+
+###
+GET {{URL}}/products/64a3b65c2a3ecbd98951046f HTTP/1.1
+
+###
+DELETE  {{URL}}/products/64a3b65c2a3ecbd98951046f HTTP/1.1
+
+
+###
+PATCH {{URL}}/products/64a3b65c2a3ecbd98951046f HTTP/1.1
+Content-Type: application/json
+
+{
+}
+
+###
+POST {{URL}}/products/64a3b65c2a3ecbd98951046f/uploadImage HTTP/1.1
+
+
+
+
